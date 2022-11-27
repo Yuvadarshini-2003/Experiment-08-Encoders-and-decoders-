@@ -75,8 +75,8 @@ Step7:- Validate the outputs.
 ### PROGRAM 
 ```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: BHUVANESHWAR V
-RegisterNumber:  212221240009
+Developed by: Yuvadarshini S
+RegisterNumber:  212221230126
 i)ENCODER:
 module exp8(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
 output a,b,c;
