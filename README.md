@@ -1,10 +1,13 @@
 # Experiment-08- Encoders-and-decoders 
-### AIM: To implement 8 to 3 Encoder and  3to8 Decoder using verilog and validate its outputs
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
-### THEORY 
+## AIM: 
+To implement 8 to 3 Encoder and  3to8 Decoder using verilog and validate its outputs
+## HARDWARE REQUIRED:  
+PC, Cyclone II , USB flasher
+## SOFTWARE REQUIRED: 
+Quartus prime
+## THEORY: 
 
-## Encoders
+## Encoders:
 Binary code of N digits can be used to store 2N distinct elements of coded information. This is what encoders and decoders are used for. Encoders convert 2N lines of input into a code of N bits and Decoders decode the N bits into 2N lines.
 
 1. Encoders –
@@ -27,7 +30,7 @@ Hence, the encoder can be realised with OR gates as follows:
 ![image](https://user-images.githubusercontent.com/36288975/171543740-68403b82-aa93-4c98-9343-f32b14885a2e.png)
 ## Figure -02 3 to 8 Encoder implenentation 
 
- ### Decoders 
+ ## Decoders: 
 A decoder does the opposite job of an encoder. It is a combinational circuit that converts n lines of input into 2n lines of output.
 
 Let’s take an example of 3-to-8 line decoder.
@@ -55,42 +58,80 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+Step1:- Open the quartus II software.
 
+Step2:- Create a new project.
 
+Step3:- Name the projects such that the same name is used for mentioning the name of the module.
+
+Step4:- Develop programmes for both Encoder and Decoder using verilog programming.
+
+Step5:- Run RTL Simulation.
+
+Step6:- Create the Timing diagram.
+
+Step7:- Validate the outputs.
 
 ### PROGRAM 
-/*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: BHUVANESHWAR V
+RegisterNumber:  212221240009
+i)ENCODER:
+module exp8(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+
+ii)DECODER:
+module dec(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0=(~a & ~b & ~c) ;
+assign d1=(~a & ~b &c);
+assign d2=(~a & b &~c);
+assign d3=(~a & b &c);
+assign d4=(a &~b&~c);
+assign d5=(a &~b&c);
+assign d6=(a&b&~c);
+assign d7=(a&b&c);
+endmodule
+
+```
+## RTL LOGIC:
+### ENCODER:
+![image](https://user-images.githubusercontent.com/94233985/201405338-ca0f1cdb-947a-44f4-bd54-990febecaa5f.png)
+
+### DECODER:
+![image](https://user-images.githubusercontent.com/94233985/201405408-d04f5bac-bbf4-4231-a889-f63f57a370ec.png)
+
+
+## TIMING DIGRAMS: 
+
+### ENCODER:
+![image](https://user-images.githubusercontent.com/94233985/201405481-43d7ae18-23d6-440b-a213-3d1e3ee5f18e.png)
+![image](https://user-images.githubusercontent.com/94233985/201405615-a053b5f1-16f2-426a-8aad-ceff2fe4c25b.png)
+
+![image](https://user-images.githubusercontent.com/94233985/201405701-a08b8120-18b0-4ea0-b88a-d103d248e3f3.png)
+
+### DECODER:
+
+![image](https://user-images.githubusercontent.com/94233985/201405793-4b5d9c77-c988-4eb2-bcef-0b4d38495763.png)
+
+## TRUTH TABLE:
+
+
+### ENCODER:
+![image](https://user-images.githubusercontent.com/94233985/201405872-697ae8cc-d157-485e-92ed-3dae68f61bad.png)
+
+### DECODER:
+
+![image](https://user-images.githubusercontent.com/94233985/201405930-f654e9ad-4e14-445b-9446-a652b5a5a4ab.png)
 
 
 
-
-
-
-### RTL LOGIC  
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+## RESULT:
+Thus 8 to 3 Encoder and 3to8 Decoder are implemented successfully using verilog and validate its outputs.
